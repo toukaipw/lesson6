@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>자연의 지붕 아래 — 별빛 전망대를 여는 네 글자</title>
+<meta name="description" content="중2 영어 Lesson 6 Science is the Key 본문 방탈출. 민호의 첫 캠핑 이야기를 읽어 내 별빛 전망대의 문을 연다.">
+<meta name="theme-color" content="#F4FAFD">
+<meta name="color-scheme" content="light">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="자연의 지붕 아래">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:title" content="자연의 지붕 아래 — 별빛 전망대를 여는 네 글자">
+<meta property="og:description" content="Lesson 6 Science is the Key 본문 방탈출. 민호의 이야기를 읽고 전망대 자물쇠의 네 글자를 모아라.">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C9EBFF'/%3E%3Ccircle cx='24' cy='8' r='4' fill='%23FFC83D'/%3E%3Cpolygon points='16,9 27,27 5,27' fill='%23FF8155'/%3E%3Cpolygon points='16,12 19.5,27 12.5,27' fill='%23FFE3A1'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%23C9EBFF'/%3E%3Ccircle cx='136' cy='44' r='20' fill='%23FFC83D'/%3E%3Cpolygon points='90,50 150,150 30,150' fill='%23FF8155'/%3E%3Cpolygon points='90,64 110,150 70,150' fill='%23FFE3A1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4FAFD;         /* 맑은 하늘 아래 바탕 */
+  --paper:#FFFFFF;      /* 캠핑 일지 종이 */
+  --ink:#1E3440;        /* 글자 */
+  --muted:#5E7482;
+  --line:#D9E4EA;
+  --line-2:#C7D6DF;
+  --sun:#FFC83D;        /* 햇살 */
+  --sun-deep:#DFA115;
+  --sun-pale:#FFF4D1;
+  --coral:#FF7A4D;      /* 텐트 */
+  --coral-ink:#C2410C;
+  --forest:#1E7A55;     /* 맞았다 */
+  --forest-pale:#E4F5EC;
+  --lake-ink:#1F7896;   /* 호수 */
+  --ember:#C0392B;      /* 틀렸다 */
+  --ember-pale:#FCE9E6;
+  --tape:#FFD66B;       /* 장소마다 바뀌는 마스킹테이프 */
+  --r:14px;
+  --card-r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  overscroll-behavior-y:none;
+}
+.display{font-family:"Jua","IBM Plex Sans KR",sans-serif;font-weight:400;letter-spacing:.01em}
+
+/* ── 하늘: 장소를 옮길수록 아침에서 밤으로 ── */
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sky{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.sky.dawn{background:
+  radial-gradient(60% 38% at 96% 0%, rgba(255,200,61,.38), transparent 70%),
+  linear-gradient(180deg,#FFE6CC 0%, rgba(244,250,253,0) 52%)}
+.sky.noon{background:
+  radial-gradient(55% 36% at 50% -4%, rgba(255,214,90,.34), transparent 70%),
+  linear-gradient(180deg,#C8E9FF 0%, rgba(244,250,253,0) 52%)}
+.sky.after{background:
+  radial-gradient(55% 38% at 4% 0%, rgba(255,170,80,.38), transparent 70%),
+  radial-gradient(100% 38% at 50% 112%, rgba(122,207,227,.30), transparent 70%),
+  linear-gradient(180deg,#FFE2B5 0%, rgba(244,250,253,0) 52%)}
+.sky.dusk{background:
+  radial-gradient(60% 34% at 50% 110%, rgba(255,138,43,.20), transparent 70%),
+  linear-gradient(180deg,#FFD2C0 0%, #F7E4F4 30%, rgba(244,250,253,0) 60%)}
+.sky.night{background:linear-gradient(180deg,#CDD3F8 0%, #E7EAFC 38%, rgba(244,250,253,0) 70%)}
+body[data-sky="dawn"] .sky.dawn,
+body[data-sky="noon"] .sky.noon,
+body[data-sky="after"] .sky.after,
+body[data-sky="dusk"] .sky.dusk,
+body[data-sky="night"] .sky.night{opacity:1}
+.spark{position:absolute;display:block;
+  -webkit-clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.spark.more{opacity:0;transition:opacity 2s ease}
+body.cleared .spark.more{opacity:1}
+.twinkle{animation:twinkle 3.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.3}}
+
+#app{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column}
+.screen{display:none;flex:1;flex-direction:column}
+.screen.on{display:flex}
+.wrap{width:100%;max-width:640px;margin:0 auto;padding:20px 18px calc(28px + env(safe-area-inset-bottom))}
+
+/* ── 그림 ───────────────────────────── */
+.hero,.skyart{display:block;width:100%;height:auto;margin:0 auto;filter:drop-shadow(0 4px 0 rgba(30,52,64,.10))}
+.hero{max-width:420px}
+.skyart{max-width:480px}
+
+/* ── 표지 ───────────────────────────── */
+#title .wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px;text-align:center;
+  min-height:100vh;min-height:100dvh;padding-top:calc(22px + env(safe-area-inset-top))}
+#title h1{font-size:clamp(34px,10vw,50px);line-height:1.16;word-break:keep-all;color:var(--ink)}
+#title h1 span{display:block;margin-top:10px;font-size:.5em;color:var(--coral-ink)}
+.tagline{color:var(--muted);font-size:15px;max-width:34ch;margin:0 auto;word-break:keep-all}
+.note{
+  position:relative;text-align:left;font-size:14.5px;color:#34495A;word-break:keep-all;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--card-r);
+  box-shadow:0 3px 0 var(--line);padding:20px 18px 16px;
+}
+.note::before,.plaque::before,.recap::before{content:"";position:absolute;top:-10px;left:50%;width:74px;height:20px;margin-left:-37px;
+  background:var(--tape);opacity:.9;border-radius:3px;transform:rotate(-2.5deg)}
+.note b{color:var(--ink);font-weight:700}
+.course{font-size:12.5px;color:var(--muted)}
+.mode{display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:var(--muted)}
+.mode input{width:18px;height:18px;accent-color:var(--coral)}
+
+/* ── 버튼 ───────────────────────────── */
+.btn{
+  display:block;width:100%;min-height:52px;padding:14px 18px;
+  font:inherit;font-size:16px;font-weight:700;color:var(--ink);
+  background:var(--sun);border:none;border-radius:var(--r);cursor:pointer;
+  box-shadow:0 3px 0 var(--sun-deep);transition:transform .1s ease, box-shadow .1s ease, filter .12s ease;
+}
+.btn:hover{filter:brightness(1.04)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--sun-deep)}
+.btn:disabled{background:#E7ECEF;color:#8A9AA6;box-shadow:0 3px 0 #D3DBE0;cursor:default;filter:none;transform:none}
+.btn.ghost{background:var(--paper);color:var(--ink);border:1.5px solid var(--line);box-shadow:0 2px 0 var(--line)}
+.btn.ghost:hover{border-color:var(--coral);color:var(--coral-ink);filter:none}
+.btn.small{min-height:44px;font-size:14px;padding:10px 14px}
+:focus-visible{outline:3px solid var(--lake-ink);outline-offset:3px}
+
+/* ── 상태 바 ────────────────────────── */
+.status{
+  position:sticky;top:0;z-index:5;background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top);
+}
+.status .inner{max-width:640px;margin:0 auto;padding:10px 18px 6px;display:flex;align-items:center;gap:14px}
+.zone{flex:1;min-width:0;font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zone b{color:var(--ink);font-weight:700}
+.lanterns{display:flex;gap:7px;padding-top:4px}
+.lantern{position:relative;width:11px;height:17px;border-radius:4px 4px 3px 3px;
+  background:radial-gradient(circle at 50% 62%, #FFF3BF, var(--sun) 55%, #D9960F);
+  box-shadow:0 0 9px rgba(255,190,50,.75)}
+.lantern::before{content:"";position:absolute;left:2.5px;right:2.5px;top:-4px;height:4px;
+  border:1.5px solid #C0892A;border-bottom:none;border-radius:4px 4px 0 0}
+.lantern.out{background:#DCE4E9;box-shadow:none}
+.lantern.out::before{border-color:#C2CDD4}
+.clock{min-width:44px;text-align:right;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.clock.low{color:var(--ember)}
+.clock.off{color:var(--muted);font-weight:400}
+.track{max-width:640px;margin:0 auto;padding:0 18px 9px;display:flex;align-items:center;gap:9px;
+  font-size:10.5px;line-height:1;color:var(--muted)}
+.rail{position:relative;flex:1;height:3px;border-radius:3px;background:#DCE8EF}
+.rail i{position:absolute;top:0;bottom:0;right:0;width:0;border-radius:3px;
+  background:linear-gradient(270deg, rgba(255,200,61,.25), var(--sun));transition:width .5s ease}
+.rail b{position:absolute;top:50%;left:100%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;
+  background:var(--sun);border:2px solid #fff;box-shadow:0 0 0 1px rgba(223,161,21,.5), 0 0 10px rgba(255,190,50,.7);
+  transition:left .5s ease, background .8s ease, box-shadow .8s ease}
+.rail b.moon{background:#F4F2FF;box-shadow:0 0 0 1px #A9B0E0, 0 0 10px rgba(169,176,224,.7)}
+
+/* ── 장소 이름과 그림 ───────────────── */
+.roomname{display:flex;align-items:center;gap:14px;margin:18px 0 2px}
+.rtext{flex:1;min-width:0}
+.roomname h2{font-size:clamp(26px,7vw,34px);line-height:1.2;color:var(--ink)}
+.roomname p{margin-top:4px;font-size:14px;color:var(--coral-ink);word-break:keep-all}
+.spot{flex:none;width:clamp(108px,31vw,140px);filter:drop-shadow(0 3px 0 rgba(30,52,64,.09))}
+.spot svg{display:block;width:100%;height:auto}
+
+/* ── 문제 카드: 테이프로 붙인 캠핑 일지 ── */
+.plaque{
+  position:relative;margin:26px 0 20px;padding:20px 18px 18px;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--card-r);
+  box-shadow:0 3px 0 var(--line);
+}
+.label{font-size:12.5px;color:var(--lake-ink);margin-bottom:8px;word-break:keep-all}
+.flavor{font-size:14.5px;color:var(--muted);word-break:keep-all}
+.en{font-size:clamp(16.5px,4.4vw,18px);line-height:1.75;color:var(--ink)}
+.en u{text-decoration:none;border-bottom:2.5px solid var(--coral);padding-bottom:1px}
+.en .tq{display:block;margin:6px 0;font-size:.9em;color:var(--muted)}
+.en .gap{display:inline-block;min-width:4.4em;border-bottom:2.5px solid var(--coral);color:var(--coral-ink);text-align:center;font-weight:700}
+.en .given{display:block;padding:3px 0;color:var(--muted)}
+.en .seq{display:block;padding:3px 0}
+.en .seq b{color:var(--coral-ink)}
+.en .booktitle{display:block;margin-bottom:6px;font-family:"Jua",sans-serif;font-size:1.3em;color:var(--coral-ink)}
+.blank{display:inline-block;min-width:3.2em;padding:0 4px;border-bottom:2.5px solid transparent;
+  color:var(--coral-ink);font-weight:700;letter-spacing:.16em;text-align:center;line-height:1.4}
+.blank.filled{letter-spacing:.01em;border-bottom-color:var(--coral)}
+.blank.fixed{letter-spacing:.01em;color:var(--forest);border-bottom-color:var(--forest)}
+.bogi{margin-top:14px;padding:12px 14px;background:#FAFCFD;border:1.5px dashed var(--line-2);border-radius:10px;font-size:14.5px;color:var(--ink)}
+.bogi strong{display:block;margin-bottom:4px;font-size:12.5px;font-weight:500;color:var(--muted)}
+.bogi li{list-style:none;padding:2px 0}
+
+.ask{font-size:16px;font-weight:700;margin:4px 0 14px;word-break:keep-all}
+#stage > .ask:first-child{margin-top:22px}
+
+/* 5지선다 */
+.opts{display:grid;gap:10px}
+.opt{
+  display:flex;align-items:flex-start;gap:12px;width:100%;min-height:54px;padding:13px 14px;
+  font:inherit;font-size:15.5px;font-weight:500;line-height:1.5;text-align:left;
+  background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+  box-shadow:0 2px 0 var(--line);cursor:pointer;transition:border-color .12s, background .12s;word-break:keep-all;
+}
+.opt .no{flex:none;display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;margin-top:-1px;
+  border-radius:50%;background:var(--sun-pale);border:1.5px solid var(--sun-deep);font-size:13px;font-weight:700;color:var(--ink)}
+.opt:hover:not(:disabled){border-color:var(--coral)}
+.opt:disabled{cursor:default;opacity:.55}
+.opt.right{background:var(--forest-pale);border-color:var(--forest);box-shadow:0 2px 0 #B3DDC8;opacity:1}
+.opt.right .no{background:#fff;border-color:var(--forest);color:var(--forest)}
+.opt.wrong{background:var(--ember-pale);border-color:var(--ember);box-shadow:0 2px 0 #F1C2BB;opacity:1}
+.opt.wrong .no{background:#fff;border-color:var(--ember);color:var(--ember)}
+
+/* 단답형 */
+.frame{margin:0 0 14px;padding:13px 15px;background:#FAFCFD;border:1.5px dashed var(--line-2);border-radius:12px;
+  font-size:16.5px;line-height:1.75;color:var(--ink)}
+.field{display:flex;gap:8px}
+.field input{
+  flex:1;min-width:0;min-height:56px;padding:12px 16px;font:inherit;font-size:18px;
+  background:var(--paper);color:var(--ink);border:1.5px solid var(--line-2);border-radius:var(--r);
+}
+.field input::placeholder{color:#9AAAB5}
+.field input:focus{border-color:var(--coral)}
+.field input:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,122,77,.22)}
+.field input:disabled{background:#F3F6F8;color:var(--muted)}
+.field .btn{width:auto;padding:0 22px}
+
+/* 전망대 자물쇠 */
+.code{display:flex;justify-content:center;gap:10px;margin:6px 0 18px}
+.code i{
+  width:54px;height:66px;display:flex;align-items:center;justify-content:center;font-style:normal;
+  font-family:"Jua",sans-serif;font-size:32px;color:var(--coral-ink);
+  background:var(--paper);border:1.5px solid var(--line-2);border-radius:12px;box-shadow:0 2px 0 var(--line);
+}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.pad button{min-height:56px;font:inherit;font-size:20px;font-weight:700;
+  background:var(--paper);color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+  box-shadow:0 2px 0 var(--line);cursor:pointer}
+.pad button.fn{font-size:15px;color:var(--muted)}
+.pad button:hover:not(:disabled){border-color:var(--coral)}
+.pad button:disabled{opacity:.5;cursor:default}
+
+/* 힌트 · 해설 */
+.tools{margin-top:16px}
+.hint{
+  margin-top:12px;padding:13px 15px;font-size:14px;color:#34495A;word-break:keep-all;
+  background:var(--sun-pale);border:1.5px solid #F1D27B;border-radius:12px;
+}
+.hint b{color:var(--coral-ink)}
+.verdict{margin-top:16px;padding:15px 16px;border-radius:12px;border:1.5px solid}
+.verdict.ok{background:var(--forest-pale);border-color:#9DD2B7}
+.verdict.no{background:var(--ember-pale);border-color:#EFB3A9}
+.verdict h3{font-size:16px;margin-bottom:6px}
+.verdict.ok h3{color:var(--forest)}
+.verdict.no h3{color:var(--ember)}
+.verdict p{font-size:14.5px;color:#34495A;word-break:keep-all}
+.verdict p + p{margin-top:6px}
+.verdict .key b{color:var(--forest);margin-right:2px}
+#verdict .btn{margin-top:12px}
+
+/* ── 글자 발견: 텐트 문이 열린다 ────── */
+#unlock .wrap{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:18px;
+  min-height:100vh;min-height:100dvh}
+.uzone{color:var(--lake-ink);font-size:14px;word-break:keep-all}
+.camp{display:flex;align-items:flex-end;justify-content:center;gap:6px;margin:8px auto 0}
+.camp .pine{width:clamp(34px,10vw,46px);height:auto;flex:none}
+.camp .pine.r{width:clamp(28px,8vw,38px)}
+.tent{position:relative;width:min(210px,54vw);aspect-ratio:5/4}
+.camp{position:relative;padding:0 14px}
+.camp::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:5px;border-radius:3px;background:#9ED282}
+.tent .inside{position:absolute;inset:0;
+  -webkit-clip-path:polygon(50% 0,100% 100%,0 100%);clip-path:polygon(50% 0,100% 100%,0 100%);
+  background:radial-gradient(60% 58% at 50% 84%, #FFF1BF, #FFD36B 50%, #F4AE3C 100%)}
+.tent .flap{position:absolute;inset:0}
+.tent .flap.l{background:linear-gradient(160deg,#FF9A72,#FF7A4D);
+  -webkit-clip-path:polygon(50% 0,50% 100%,0 100%);clip-path:polygon(50% 0,50% 100%,0 100%);
+  animation:flapL .9s .35s cubic-bezier(.6,0,.2,1) forwards}
+.tent .flap.r{background:linear-gradient(200deg,#F2733F,#D95C2B);
+  -webkit-clip-path:polygon(50% 0,100% 100%,50% 100%);clip-path:polygon(50% 0,100% 100%,50% 100%);
+  animation:flapR .9s .35s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes flapL{to{-webkit-clip-path:polygon(50% 0,24% 100%,0 100%);clip-path:polygon(50% 0,24% 100%,0 100%)}}
+@keyframes flapR{to{-webkit-clip-path:polygon(50% 0,100% 100%,76% 100%);clip-path:polygon(50% 0,100% 100%,76% 100%)}}
+.tent .letter{position:absolute;left:0;right:0;bottom:5%;text-align:center;
+  font-family:"Jua",sans-serif;font-size:clamp(50px,14vw,70px);line-height:1;color:#8A3A0E;
+  opacity:0;animation:pop .5s 1.05s forwards}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+.word{font-size:15px;font-weight:700;color:var(--coral-ink)}
+.collected{display:flex;justify-content:center;gap:8px}
+.collected i{width:40px;height:48px;display:flex;align-items:center;justify-content:center;font-style:normal;
+  font-family:"Jua",sans-serif;font-size:24px;color:var(--coral-ink);background:var(--paper);
+  border:1.5px solid var(--line-2);border-radius:10px;box-shadow:0 2px 0 var(--line)}
+.collected i.new{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,122,77,.18)}
+
+/* ── 결과 ───────────────────────────── */
+#fail .wrap,#clear .wrap{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:20px;
+  min-height:100vh;min-height:100dvh}
+#fail h2,#clear h2{font-size:clamp(30px,8vw,42px)}
+#fail h2{color:var(--ember)}
+#clear h2{color:var(--ink)}
+.lampart{display:block;width:110px;height:auto;margin:0 auto}
+.tally{display:flex;justify-content:center;gap:26px;flex-wrap:wrap}
+.tally div{text-align:center}
+.tally b{display:block;font-family:"Jua",sans-serif;font-size:30px;font-weight:400;color:var(--coral-ink)}
+.tally span{font-size:12.5px;color:var(--muted)}
+.recap{position:relative;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--card-r);
+  box-shadow:0 3px 0 var(--line);padding:18px 18px 16px}
+.recap h3{font-size:15px;color:var(--coral-ink);margin-bottom:8px}
+.recap ul{list-style:none}
+.recap li{list-style:none;font-size:14px;color:#34495A;padding:8px 0;border-top:1px solid #E6EEF3;word-break:keep-all}
+.recap li:first-of-type{border-top:none}
+.recap li b{color:var(--ink)}
+.recap li .lt{display:inline-block;width:1.4em;font-family:"Jua",sans-serif;font-size:18px;font-weight:400;color:var(--coral-ink)}
+.recap .motto{margin-top:10px;padding-top:12px;border-top:1px solid #E6EEF3;font-size:15px;color:var(--ink)}
+
+/* 밤하늘 별자리 */
+.kline polyline{stroke-dasharray:100;stroke-dashoffset:100}
+.kstar{opacity:0;transform-box:fill-box;transform-origin:center}
+.playing .kline polyline{animation:draw 1.6s .5s ease forwards}
+.playing .kstar{animation:pop .45s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .twinkle{animation:none}
+  .kline polyline{stroke-dashoffset:0}
+  .kstar{opacity:1}
+}
+@media (max-width:380px){
+  .code i{width:46px;height:58px;font-size:28px}
+  .tally{gap:18px}
+  .roomname{gap:10px}
+}
+</style>
+</head>
+<body data-sky="dawn">
+
+<div id="sky" aria-hidden="true">
+  <div class="sky dawn"></div>
+  <div class="sky noon"></div>
+  <div class="sky after"></div>
+  <div class="sky dusk"></div>
+  <div class="sky night" id="nightSky"></div>
+</div>
+
+<div id="app">
+
+<!-- 표지 -->
+<section id="title" class="screen on">
+  <div class="wrap">
+    <svg class="hero" viewBox="0 0 360 220" role="img" aria-label="호숫가 캠핑장 그림. 나무 옆에 텐트가 있고, 모닥불과 호수, 산 위로 해가 떠오른다.">
+      <defs>
+        <clipPath id="heroClip"><rect width="360" height="220" rx="26"/></clipPath>
+        <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9EBFF"/><stop offset=".75" stop-color="#EEF9FF"/></linearGradient>
+      </defs>
+      <g clip-path="url(#heroClip)">
+        <rect width="360" height="220" fill="url(#heroSky)"/>
+        <path d="M330 150 A150 116 0 0 0 30 150" fill="none" stroke="#FFB23F" stroke-width="2.4" stroke-dasharray="1 8" stroke-linecap="round"/>
+        <circle cx="303" cy="84" r="27" fill="#FFE59A" opacity=".6"/>
+        <circle cx="303" cy="84" r="17" fill="#FFC83D"/>
+        <g fill="#fff"><ellipse cx="80" cy="50" rx="26" ry="9"/><ellipse cx="96" cy="44" rx="15" ry="11"/><ellipse cx="67" cy="46" rx="12" ry="8"/></g>
+        <g fill="#fff" opacity=".9"><ellipse cx="196" cy="32" rx="19" ry="6.5"/><ellipse cx="207" cy="28" rx="11" ry="7.5"/></g>
+        <path d="M0 150 L48 106 L84 132 L138 78 L194 136 L244 100 L298 140 L360 112 L360 220 L0 220Z" fill="#B7E0D2"/>
+        <path d="M138 78 L156 96 L148 94 L140 100 L132 94 L122 94Z" fill="#fff" opacity=".85"/>
+        <path d="M0 170 C60 152 112 152 172 162 C232 172 292 154 360 152 L360 220 L0 220Z" fill="#8FD0B6"/>
+        <path d="M214 190 C250 178 310 174 360 176 L360 220 L202 220 C202 206 206 196 214 190Z" fill="#7ACFE3"/>
+        <path d="M252 196 h38 M300 206 h40 M232 212 h24" stroke="#fff" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+        <path d="M262 190 q9 -11 18 0 q7 -8 14 0 q5 -6 10 0" fill="none" stroke="#2E86A8" stroke-width="1.8" stroke-dasharray="2 3" stroke-linecap="round"/>
+        <path d="M0 190 C60 180 140 178 214 190 L206 220 L0 220Z" fill="#CDEBA8"/>
+        <path d="M0 205 C50 199 120 199 206 205 L204 220 L0 220Z" fill="#B5DF8F"/>
+        <polygon points="14,190 30,152 46,190" fill="#2F9A6E"/>
+        <polygon points="18,174 30,142 42,174" fill="#3AAE7E"/>
+        <rect x="28" y="189" width="4" height="8" fill="#9B6238"/>
+        <polygon points="40,194 53,164 66,194" fill="#237A57"/>
+        <rect x="51" y="193" width="4" height="6" fill="#9B6238"/>
+        <rect x="80" y="150" width="8" height="40" rx="2" fill="#9B6238"/>
+        <circle cx="84" cy="142" r="22" fill="#5DBB85"/>
+        <circle cx="72" cy="150" r="12" fill="#479E6D"/>
+        <circle cx="95" cy="133" r="8" fill="#72C996"/>
+        <ellipse cx="84" cy="191" rx="18" ry="3.5" fill="#A9D08F"/>
+        <polygon points="100,192 126,150 152,192" fill="#FF8155"/>
+        <polygon points="126,150 152,192 126,192" fill="#E86A3F"/>
+        <polygon points="126,157 135,192 117,192" fill="#FFE3A1"/>
+        <line x1="126" y1="150" x2="126" y2="143" stroke="#8B5427" stroke-width="2.2" stroke-linecap="round"/>
+        <g transform="translate(180 198)">
+          <path d="M0 -30 C9 -19 12 -12 8 -5 C6 -1 3 1 0 1 C-3 1 -6 -1 -8 -5 C-11 -12 -7 -20 0 -30Z" fill="#FF8A2B"/>
+          <path d="M0 -19 C5 -13 6 -9 4 -5 C3 -3 2 -2 0 -2 C-2 -2 -3 -3 -4 -5 C-6 -9 -4 -14 0 -19Z" fill="#FFE27A"/>
+          <rect x="-15" y="-3" width="30" height="6" rx="3" fill="#B8793F" transform="rotate(16)"/>
+          <rect x="-15" y="-3" width="30" height="6" rx="3" fill="#8B5427" transform="rotate(-16)"/>
+        </g>
+      </g>
+    </svg>
+    <h1 class="display">자연의 지붕 아래<span>별빛 전망대를 여는 네 글자</span></h1>
+    <p class="tagline">문을 여는 열쇠는 이야기 안에 있다. 민호가 찾은 과학 열쇠를 따라가자.</p>
+    <div class="note">
+      민호와 아빠의 첫 캠핑 날. 오늘 밤에는 별빛 전망대에서 별을 보기로 했다.
+      그런데 전망대 문이 <b>알파벳 네 글자 자물쇠</b>로 잠겨 있다.
+      캠핑장 네 곳에서 <b>민호의 이야기를 정확히 읽어 내면</b> 장소마다 글자를 하나씩 얻는다.
+      네 글자를 모아 전망대 문을 열어라.
+      <br><br>랜턴은 <b>세 개</b>. 틀릴 때마다 하나씩 꺼진다.
+      문제는 <b>5지선다형</b>과 <b>단답형</b>이 섞여 있고, 단답형은 영어나 숫자로 입력한다.
+    </div>
+    <p class="course">중학 영어 2 Lesson 6 본문 Science is the Key (pp.120~123)</p>
+    <label class="mode"><input type="checkbox" id="relaxed"> 여유 모드 (제한시간 없이 풀기)</label>
+    <button class="btn" id="start" type="button">캠핑장으로 들어가기</button>
+  </div>
+</section>
+
+<!-- 게임 -->
+<section id="game" class="screen">
+  <div class="status">
+    <div class="inner">
+      <div class="zone"><b id="zoneName">캠핑장 입구</b> <span id="zoneNum">1 / 5</span></div>
+      <div class="lanterns" id="lanterns" aria-label="남은 랜턴"></div>
+      <div class="clock" id="clock">2:00</div>
+    </div>
+    <div class="track" aria-hidden="true"><span>W</span><div class="rail"><i id="trail"></i><b id="sun"></b></div><span>E</span></div>
+  </div>
+  <div class="wrap">
+    <div class="roomname">
+      <div class="rtext">
+        <h2 class="display" id="rTitle"></h2>
+        <p id="rSub"></p>
+      </div>
+      <div class="spot" id="rArt" aria-hidden="true"></div>
+    </div>
+    <div id="stage" aria-live="polite"></div>
+    <div class="tools">
+      <button class="btn ghost small" id="hintBtn" type="button">아빠에게 힌트 듣기</button>
+      <div class="hint" id="hintBox" hidden></div>
+    </div>
+    <div id="verdict"></div>
+  </div>
+</section>
+
+<!-- 글자 발견 -->
+<section id="unlock" class="screen">
+  <div class="wrap">
+    <p class="uzone" id="uZone"></p>
+    <div class="camp" aria-hidden="true">
+      <svg class="pine" viewBox="0 0 40 72"><polygon points="4,62 20,24 36,62" fill="#2F9A6E"/><polygon points="8,44 20,8 32,44" fill="#3AAE7E"/><rect x="18" y="61" width="4" height="10" fill="#9B6238"/></svg>
+      <div class="tent">
+        <div class="inside"></div>
+        <span class="letter" id="uLetter">S</span>
+        <div class="flap l"></div><div class="flap r"></div>
+      </div>
+      <svg class="pine r" viewBox="0 0 40 72"><polygon points="5,64 20,30 35,64" fill="#237A57"/><polygon points="9,48 20,16 31,48" fill="#2F9A6E"/><rect x="18" y="63" width="4" height="8" fill="#9B6238"/></svg>
+    </div>
+    <p class="word" id="uWord"></p>
+    <h2 class="display" style="font-size:26px">글자를 찾았다</h2>
+    <p class="tagline" id="uWhy"></p>
+    <div class="collected" id="uCollected" aria-label="모은 글자"></div>
+    <button class="btn" id="uNext" type="button">다음 장소로</button>
+  </div>
+</section>
+
+<!-- 실패 -->
+<section id="fail" class="screen">
+  <div class="wrap">
+    <svg class="lampart" viewBox="0 0 120 132" aria-hidden="true">
+      <path d="M60 22 c-6 -5 6 -9 0 -14" fill="none" stroke="#C9D3DA" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M44 40 a16 16 0 0 1 32 0" fill="none" stroke="#A7B4BD" stroke-width="4" stroke-linecap="round"/>
+      <rect x="40" y="38" width="40" height="11" rx="4" fill="#B9C5CD"/>
+      <rect x="43" y="49" width="34" height="52" rx="11" fill="#F1F5F7" stroke="#B9C5CD" stroke-width="3"/>
+      <rect x="56" y="70" width="8" height="18" rx="4" fill="#CCD6DC"/>
+      <rect x="38" y="100" width="44" height="12" rx="4" fill="#B9C5CD"/>
+    </svg>
+    <h2 class="display">랜턴이 모두 꺼졌다</h2>
+    <p class="tagline">어두워서 캠핑 일지를 읽을 수 없다. 아빠의 힌트를 챙겨 다시 들어가자.</p>
+    <div class="recap" id="failRecap"></div>
+    <button class="btn" id="retry" type="button">다시 들어가기</button>
+  </div>
+</section>
+
+<!-- 클리어 -->
+<section id="clear" class="screen">
+  <div class="wrap">
+    <svg class="skyart" id="skyArt" viewBox="0 0 360 210" role="img" aria-label="열쇠 모양 별자리가 뜬 밤하늘과 불이 켜진 별빛 전망대 그림">
+      <defs>
+        <clipPath id="nightClip"><rect width="360" height="210" rx="26"/></clipPath>
+        <linearGradient id="nightGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26316A"/><stop offset="1" stop-color="#4958A6"/></linearGradient>
+        <radialGradient id="starGlow"><stop offset="0" stop-color="#FFF3C4" stop-opacity=".95"/><stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g clip-path="url(#nightClip)">
+        <rect width="360" height="210" fill="url(#nightGrad)"/>
+        <g fill="#fff" opacity=".75">
+          <circle cx="24" cy="22" r="1.2"/><circle cx="58" cy="40" r="1"/><circle cx="36" cy="140" r="1.1"/><circle cx="150" cy="24" r="1.3"/>
+          <circle cx="182" cy="52" r="1"/><circle cx="208" cy="130" r="1.2"/><circle cx="246" cy="30" r="1"/><circle cx="284" cy="64" r="1.3"/>
+          <circle cx="330" cy="92" r="1"/><circle cx="342" cy="130" r="1.2"/><circle cx="18" cy="96" r="1"/><circle cx="130" cy="146" r="1"/>
+          <circle cx="166" cy="130" r="1.1"/><circle cx="300" cy="120" r="1"/><circle cx="226" cy="64" r="1.1"/><circle cx="46" cy="176" r="1"/>
+        </g>
+        <g fill="#FFE7A0">
+          <path d="M40 60 Q40 66 46 66 Q40 66 40 72 Q40 66 34 66 Q40 66 40 60Z"/>
+          <path d="M196 20 Q196 25 201 25 Q196 25 196 30 Q196 25 191 25 Q196 25 196 20Z"/>
+          <path d="M300 34 Q300 38 304 38 Q300 38 300 42 Q300 38 296 38 Q300 38 300 34Z"/>
+          <path d="M150 124 Q150 128 154 128 Q150 128 150 132 Q150 128 146 128 Q150 128 150 124Z"/>
+        </g>
+        <path d="M322 18 a13 13 0 1 0 11 20 a10.5 10.5 0 1 1 -11 -20z" fill="#FFE7A0"/>
+        <g class="kline" fill="none" stroke="#FFE7A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".8">
+          <polyline pathLength="100" points="122,92 109,114.5 83,114.5 70,92 83,69.5 109,69.5 122,92"/>
+          <polyline pathLength="100" points="122,92 270,92"/>
+          <polyline pathLength="100" points="236,92 236,114"/>
+          <polyline pathLength="100" points="254,92 254,106"/>
+        </g>
+        <g>
+          <g transform="translate(122 92)"><g class="kstar" style="animation-delay:.2s"><circle r="9" fill="url(#starGlow)"/><circle r="2.8" fill="#FFF8E0"/></g></g>
+          <g transform="translate(109 114.5)"><g class="kstar" style="animation-delay:.35s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(83 114.5)"><g class="kstar" style="animation-delay:.5s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(70 92)"><g class="kstar" style="animation-delay:.65s"><circle r="8" fill="url(#starGlow)"/><circle r="2.5" fill="#FFF8E0"/></g></g>
+          <g transform="translate(83 69.5)"><g class="kstar" style="animation-delay:.8s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(109 69.5)"><g class="kstar" style="animation-delay:.95s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(174 92)"><g class="kstar" style="animation-delay:1.1s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(236 92)"><g class="kstar" style="animation-delay:1.25s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(236 114)"><g class="kstar" style="animation-delay:1.4s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(254 106)"><g class="kstar" style="animation-delay:1.55s"><circle r="7" fill="url(#starGlow)"/><circle r="2.2" fill="#FFF8E0"/></g></g>
+          <g transform="translate(270 92)"><g class="kstar" style="animation-delay:1.7s"><circle r="9" fill="url(#starGlow)"/><circle r="2.8" fill="#FFF8E0"/></g></g>
+        </g>
+        <rect x="262" y="150" width="56" height="36" fill="#5D6BB0"/>
+        <path d="M262 150 a28 28 0 0 1 56 0z" fill="#7A88C9"/>
+        <rect x="285" y="125" width="10" height="25" rx="2" fill="#FFC83D"/>
+        <rect x="283" y="164" width="14" height="22" rx="3" fill="#FFD86B"/>
+        <path d="M0 180 C70 166 140 168 210 176 C250 180 300 178 360 172 L360 210 L0 210Z" fill="#1B2552"/>
+      </g>
+    </svg>
+    <h2 class="display">전망대 문이 열렸다</h2>
+    <p class="tagline">하늘 가득 별이 반짝인다. 이야기를 끝까지 읽어 낸 사람만 볼 수 있는 하늘이다.</p>
+    <div class="tally" id="tally"></div>
+    <div class="recap">
+      <h3>네 글자에 담긴 과학 열쇠</h3>
+      <ul>
+      <li><span class="lt">S</span><b>Science</b> 아빠가 말한 특별한 열쇠. 과학으로 자연을 이해한다.</li>
+      <li><span class="lt">T</span><b>Tree’s shadow</b> 해는 동쪽에서 서쪽으로, 그림자는 서쪽에서 동쪽으로. 오후 그늘 자리에 텐트를 친다.</li>
+      <li><span class="lt">A</span><b>Angle</b> 납작한 돌을 알맞은 속도로, 약 20도로 던진다.</li>
+      <li><span class="lt">R</span><b>Room for air</b> 나무를 criss-cross로 엇갈려 쌓아 공기가 드나들 공간을 만든다.</li>
+      </ul>
+      <p class="motto" lang="en" translate="no">“Dad, science is everywhere.”</p>
+    </div>
+    <button class="btn" id="again" type="button">한 번 더 캠핑하기</button>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ════════ 문제 데이터 ════════
+   type  mc    : 5지선다. answer는 opts의 번호(0부터). 화면에서는 보기 순서가 섞인다.
+         short : 단답형. answer 중 하나와 같으면 정답(대소문자·띄어쓰기·하이픈·기호 무시).
+                 text나 frame 속 {_} 자리에 입력한 답이 그대로 비친다. num:true면 숫자 키패드.
+         code  : 전망대 자물쇠. 모은 글자를 순서대로 누른다.
+   time  : 문제별 제한시간(초). 없으면 기본 120초.                                        */
+const ROOMS = [
+  {
+    name:"캠핑장 입구", sub:"첫 캠핑, 아빠가 말한 특별한 열쇠", sky:"dawn", art:"entrance", tape:"#FFCF94",
+    letter:"S", word:"Science", why:"아빠가 말한 특별한 열쇠는 과학이다. 과학으로 자연을 이해한다.",
+    qs:[
+      { type:"short", label:"p.120 한 단어가 번진 캠핑 일지",
+        text:`“So, we should understand nature with a special key,” Dad said. “What’s the key?” I asked. “{_}, Minho,” Dad answered with a big smile.`,
+        ask:"아빠가 말한 특별한 열쇠는 무엇일까요? 번진 단어를 영어로 쓰세요.",
+        answer:["science"],
+        hint:"이 글의 제목을 떠올려 보렴. ‘_______ is the Key’",
+        why:"“Science, Minho.” 아빠가 말한 특별한 열쇠는 과학(science)이다. 제목 Science is the Key도 이 대답에서 나왔다." },
+      { type:"mc", label:"p.120 입구 안내판",
+        text:`I went camping with Dad for the first time. “We’re going to spend the day under nature’s roof. So, we should understand nature with a special key,” Dad said. “What’s the key?” I asked. “Science, Minho,” Dad answered with a big smile.`,
+        ask:"위 글의 내용과 일치하는 것은?",
+        opts:["민호는 친구들과 함께 캠핑을 갔다.",
+              "민호는 캠핑을 여러 번 가 본 적이 있다.",
+              "민호와 아빠는 캠핑장에서 일주일을 보낼 예정이다.",
+              "아빠는 특별한 열쇠로 자연을 이해해야 한다고 말했다.",
+              "아빠는 민호의 질문에 굳은 표정으로 대답했다."],
+        answer:3,
+        hint:"보기를 하나씩 본문과 맞춰 보렴. with Dad, for the first time, the day, with a big smile을 확인하면 된단다.",
+        why:"So, we should understand nature with a special key. 아빠는 특별한 열쇠로 자연을 이해해야 한다고 했다. 민호는 친구가 아니라 아빠와(with Dad), 처음(for the first time) 캠핑을 갔고, 일주일이 아니라 하루(the day)를 보낸다. 아빠는 환하게 웃으며(with a big smile) 대답했다." },
+      { type:"mc", label:"p.120 아빠의 말",
+        text:`“We’re going to spend the day <u>under nature’s roof</u>. So, we should understand nature with a special key,” Dad said.`,
+        ask:"밑줄 친 under nature’s roof가 뜻하는 것으로 가장 알맞은 것은?",
+        opts:["지붕이 튼튼한 집 안에서",
+              "하늘을 지붕 삼아 자연 속 야외에서",
+              "나무 위에 지은 오두막 안에서",
+              "과학 실험실 안에서",
+              "캠핑카 지붕 위에 올라가서"],
+        answer:1,
+        hint:"캠핑장에는 진짜 지붕이 없단다. 텐트 밖에서 고개를 들면 머리 위에 무엇이 있을까?",
+        why:"nature’s roof(자연의 지붕)는 머리 위의 하늘을 말한다. 그래서 under nature’s roof는 ‘지붕 없는 자연 속에서, 야외에서’라는 뜻이다." },
+      { type:"mc", label:"p.120 이야기의 첫 장",
+        text:`“So, we should understand nature with a special key,” Dad said. “What’s the key?” I asked. “Science, Minho,” Dad answered with a big smile.`,
+        ask:"이 글 다음에 이어질 내용으로 가장 알맞은 것은?",
+        opts:["민호가 과학 시험을 준비하며 밤을 새우는 이야기",
+              "아빠가 잃어버린 캠핑장 열쇠를 찾아다니는 이야기",
+              "민호가 과학을 이용해 캠핑 중 생긴 문제를 해결하는 이야기",
+              "민호와 아빠가 캠핑 도구를 사러 가게에 가는 이야기",
+              "비가 와서 캠핑을 그만두고 집으로 돌아가는 이야기"],
+        answer:2,
+        hint:"아빠가 말한 ‘열쇠’는 진짜 열쇠가 아니었지. 그 열쇠로 무엇을 하자고 했을까?",
+        why:"아빠는 과학이라는 열쇠로 자연을 이해하자고 했다. 이어서 민호는 텐트 자리, 물수제비, 장작 쌓기 문제를 과학으로 하나씩 풀어 간다." }
+    ]
+  },
+  {
+    name:"텐트 자리", sub:"첫 번째 열쇠, 해와 그림자", sky:"noon", art:"tent", tape:"#9ED6FF",
+    letter:"T", word:"Tree’s shadow", why:"해는 동쪽에서 서쪽으로, 그림자는 서쪽에서 동쪽으로 움직인다. 오후에 나무 그림자가 드리울 자리에 텐트를 쳤다.",
+    qs:[
+      { type:"short", num:true, label:"p.121 텐트 가방에 붙은 메모",
+        text:`We pulled the tent out of its bag, and Dad looked around. “What are you doing, Dad?” “I’m looking for a place for the tent.” “It’s going to be very hot in the afternoon,” I said. “Right. We will be back from the lake about 4 hours later. Let’s think about the movement of the sun to set up the tent.”`,
+        ask:"민호와 아빠는 몇 시간쯤 뒤에 호수에서 돌아올 예정인가요? 숫자로 쓰세요.",
+        frame:`They will come back from the lake about {_} hours later.`,
+        answer:["4","four","4hours","fourhours"],
+        hint:"아빠가 “Right.”라고 대답한 바로 다음 문장을 읽어 보렴.",
+        why:"We will be back from the lake about 4 hours later. 약 4시간 뒤, 한창 더운 오후에 돌아온다. 그래서 그때의 해 위치를 생각해야 했다." },
+      { type:"mc", label:"p.121 텐트 자리 앞",
+        text:`“It’s going to be very hot in the afternoon,” I said. “Right. We will be back from the lake about 4 hours later. Let’s think about the movement of the sun to set up the tent.”`,
+        ask:"아빠가 텐트를 치기 전에 해의 움직임을 생각해 보자고 한 이유로 가장 알맞은 것은?",
+        opts:["해가 지기 전에 텐트를 다 쳐야 해서",
+              "밤에 텐트 안에서 별을 보고 싶어서",
+              "오후의 더위를 피해 텐트를 그늘에 두려고",
+              "텐트가 햇볕에 빨리 마르게 하려고",
+              "호수가 잘 보이는 자리를 찾으려고"],
+        answer:2,
+        hint:"아빠가 “Right.”라고 맞장구친 민호의 말을 보렴. 오후 날씨가 어떨 거라고 했지?",
+        why:"It’s going to be very hot in the afternoon. 오후에 무척 더울 테니, 호수에서 돌아왔을 때 텐트가 그늘에 있도록 해의 움직임을 생각한 것이다." },
+      { type:"mc", label:"p.121 두 칸이 지워진 안내판",
+        text:`I said, “The sun moves from <span class="gap">(A)</span> to west, so the shadow moves from <span class="gap">(B)</span> to east.”`,
+        ask:"(A), (B)에 들어갈 말로 알맞게 짝지어진 것은?",
+        opts:["(A) east …… (B) west",
+              "(A) west …… (B) east",
+              "(A) east …… (B) east",
+              "(A) west …… (B) west",
+              "(A) north …… (B) south"],
+        answer:0,
+        hint:"해는 아침에 어느 쪽에서 떠오르지? 그림자는 언제나 해의 반대쪽에 생긴단다.",
+        why:"The sun moves from east to west, so the shadow moves from west to east. 해가 동쪽에서 서쪽으로 가면, 그림자는 반대로 서쪽에서 동쪽으로 움직인다." },
+      { type:"short", label:"p.121 한 단어가 번진 캠핑 일지",
+        text:`I said, “The sun moves from east to west, so the shadow moves from west to east. If we put the tent here, the tent will be in the tree’s {_} then.” Dad said, “Correct! You opened the window into nature with the first key.”`,
+        ask:"번진 단어를 본문에서 찾아 쓰세요. 오후에 텐트는 무엇 속에 있게 될까요?",
+        answer:["shadow"],
+        hint:"바로 앞 문장에 이미 나온 단어란다. 해의 반대쪽에 생기는 것!",
+        why:"the tent will be in the tree’s shadow then. 오후에는 해가 서쪽에 있으니 나무 그림자는 동쪽에 생긴다. 그 자리에 텐트를 치면 돌아왔을 때 텐트가 그늘 속에 있다." }
+    ]
+  },
+  {
+    name:"호숫가", sub:"두 번째 열쇠, 돌의 모양과 던지는 각도", sky:"after", art:"lake", tape:"#FFD66B",
+    letter:"A", word:"Angle", why:"납작한 돌을 알맞은 속도로, 약 20도 각도로 던지면 가라앉지 않고 물 위를 튀어 멀리 간다.",
+    qs:[
+      { type:"mc", label:"p.122 호숫가 표지판",
+        text:`After we set up the tent, we went to the lake. I saw Dad skipping stones across the water. He was very good at <u>it</u>. “How did you do that, Dad?”`,
+        ask:"밑줄 친 it이 가리키는 것으로 알맞은 것은?",
+        opts:["텐트 치기","물수제비뜨기","수영하기","장작 쌓기","별 관찰하기"],
+        answer:1,
+        hint:"바로 앞 문장에서 아빠가 물 위로 무엇을 하고 있었는지 찾아보렴.",
+        why:"I saw Dad skipping stones across the water. He was very good at it. it은 앞 문장의 skipping stones, 곧 물수제비뜨기를 가리킨다." },
+      { type:"mc", time:150, keep:true, label:"p.122 아빠의 물수제비 비법",
+        text:`“Most stones sink in water. But if you throw a stone with the right speed and at the right angle, it can skip and go far. The shape of the stone is important, too. Can you choose a better stone and find a better angle?”`,
+        box:{ title:"〈보기〉", items:["a. 돌을 던지는 속도","b. 돌의 색깔","c. 돌을 던지는 각도","d. 돌의 모양","e. 호수의 깊이"] },
+        ask:"아빠가 말한, 돌이 물 위를 튀어 멀리 가게 하는 조건을 〈보기〉에서 모두 고른 것은?",
+        opts:["a, b","a, c","a, c, d","b, d, e","c, d, e"],
+        answer:2,
+        hint:"아빠 말에서 right가 붙은 두 가지와 important가 붙은 한 가지를 찾아보렴.",
+        why:"with the right speed and at the right angle … The shape of the stone is important, too. 알맞은 속도(a), 알맞은 각도(c), 돌의 모양(d)이 조건이다. 돌의 색깔과 호수의 깊이는 나오지 않는다." },
+      { type:"short", label:"p.122 물에 젖은 단어 카드",
+        text:`“Most stones sink in water. But if you throw a stone with the right speed and at the right angle, it can skip and go far.”`,
+        ask:"다음 영영풀이에 해당하는 단어를 위 글에서 찾아 쓰세요.",
+        frame:`to go down below the surface of water → {_}`,
+        answer:["sink","sinks"],
+        hint:"‘가라앉다’라는 뜻이란다. 대부분의 돌은 물에서 어떻게 된다고 했지?",
+        why:"Most stones sink in water. sink는 ‘가라앉다’라는 뜻이다. 대부분의 돌은 가라앉지만, 속도와 각도, 모양이 알맞으면 물 위를 튀어 간다." },
+      { type:"short", num:true, label:"p.122 숫자가 지워진 메모",
+        text:`<span class="tq">Q2. Which is the better angle to skip stones?</span>I said, “I will choose this flat stone and throw it at about an angle of {_} degrees.” “Great choice!” Dad answered.`,
+        ask:"민호는 돌을 몇 도쯤으로 던지겠다고 했나요? 숫자로 쓰세요.",
+        answer:["20","twenty","20degrees","twentydegrees","20degree"],
+        hint:"직각(90도)보다 훨씬 낮게, 물 위를 스치듯 던지는 각도란다. 두 자리 숫자!",
+        why:"throw it at about an angle of 20 degrees. 납작한 돌을 약 20도로 낮게 던져야 물 위를 튀어 멀리 간다. 아빠의 대답은 “Great choice!”" }
+    ]
+  },
+  {
+    name:"모닥불 자리", sub:"세 번째 열쇠, 공기가 드나들 공간", sky:"dusk", art:"fire", tape:"#FFB59A",
+    letter:"R", word:"Room for air", why:"나무를 가로세로로 엇갈려(criss-cross) 쌓으면 공기가 드나들 공간이 생겨 불이 잘 붙는다.",
+    qs:[
+      { type:"short", label:"p.123 캠핑장 게시판",
+        text:`Back at the campsite, we got ready for a barbecue. I was very excited. “Look, Minho. If you make enough space for air, you will get a good fire. What is the best way to pile up the wood?”`,
+        ask:"캠핑장으로 돌아온 두 사람은 무엇을 준비했나요? 본문에서 찾아 영어로 쓰세요.",
+        frame:`They got ready for a {_}.`,
+        answer:["barbecue","barbeque","bbq"],
+        hint:"Back at the campsite로 시작하는 문장에 있단다. 고기를 구워 먹는 야외 요리!",
+        why:"Back at the campsite, we got ready for a barbecue. 캠핑장으로 돌아와 바비큐를 준비했다. 그래서 불을 피워야 했다." },
+      { type:"mc", label:"p.123 모닥불 자리 앞",
+        text:`“Look, Minho. If you make enough space for air, you will get a good fire. What is the best way to pile up the wood?”`,
+        ask:"아빠의 말에 따르면, 불을 잘 피우려면 어떻게 해야 하나요?",
+        opts:["나무를 빈틈없이 촘촘하게 쌓는다.",
+              "공기가 드나들 공간을 충분히 만든다.",
+              "나무를 물에 한 번 적셨다가 쌓는다.",
+              "무거운 돌을 나무 위에 올려 둔다.",
+              "나무를 최대한 높이 한 줄로 세운다."],
+        answer:1,
+        hint:"If로 시작하는 아빠의 말을 우리말로 옮겨 보렴.",
+        why:"If you make enough space for air, you will get a good fire. 공기가 드나들 공간을 충분히 만들어야 불이 잘 붙는다." },
+      { type:"short", label:"p.123 한 단어가 번진 캠핑 일지",
+        text:`I tried many patterns and finally made the best pattern. “Dad, how about this?”<span class="tq">Q3. What is the best way to pile up the wood?</span>“Yes, the {_} pattern makes more room for air. Well done.”`,
+        ask:"민호가 찾아낸 가장 좋은 나무 쌓기 모양은? 번진 단어를 영어로 쓰세요.",
+        answer:["criss-cross","crisscross"],
+        hint:"나무를 가로세로로 엇갈려 쌓은 十자형 모양이란다. c로 시작하는 두 부분을 하이픈(-)으로 이은 말!",
+        why:"the criss-cross pattern makes more room for air. 가로세로로 엇갈려 쌓으면(criss-cross) 나무 사이에 공기가 지나갈 공간이 더 많이 생긴다." },
+      { type:"mc", label:"p.123 장작더미에 끼인 쪽지",
+        text:`“Yes, the criss-cross pattern makes more <u>room</u> for air. Well done.”`,
+        ask:"밑줄 친 room과 같은 뜻으로 쓰인 것은?",
+        opts:["My room is on the second floor.",
+              "Can I study in your room tonight?",
+              "There is no room for my bag in this box.",
+              "The meeting room is next to the office.",
+              "She cleaned her room all morning."],
+        answer:2,
+        hint:"여기서 room은 ‘방’이 아니란다. 아빠가 앞에서 쓴 space와 같은 뜻이야.",
+        why:"makes more room for air의 room은 ‘공간, 자리’라는 뜻이다(= space). ‘이 상자에는 내 가방을 넣을 공간이 없다.’의 room과 같다. 나머지는 모두 ‘방’이라는 뜻이다." }
+    ]
+  },
+  {
+    name:"별빛 전망대", sub:"밤하늘, 그리고 이야기 전체", sky:"night", art:"observatory", tape:"#C9CBF6",
+    letter:null, word:null, why:null,
+    qs:[
+      { type:"mc", time:150, keep:true, label:"pp.120~123 흩어진 일지 조각",
+        text:`<span class="given">I went camping with Dad for the first time.</span><span class="seq"><b>(A)</b> I chose a flat stone and threw it at about 20 degrees.</span><span class="seq"><b>(B)</b> I piled up the wood in a criss-cross pattern.</span><span class="seq"><b>(C)</b> I chose a place for the tent by thinking about the sun.</span><span class="given">At night, we watched hundreds of stars.</span>`,
+        ask:"민호의 하루 순서에 맞게 (A)~(C)를 배열한 것은?",
+        opts:["(A) - (B) - (C)","(A) - (C) - (B)","(B) - (A) - (C)","(B) - (C) - (A)","(C) - (A) - (B)"],
+        answer:4,
+        hint:"텐트를 친 다음 호수에 갔고, 캠핑장으로 돌아와서 바비큐를 준비했지.",
+        why:"텐트 자리 정하기(C) → 호숫가 물수제비(A) → 모닥불 장작 쌓기(B). After we set up the tent, we went to the lake. / Back at the campsite, we got ready for a barbecue." },
+      { type:"mc", time:150, label:"pp.120~123 전망대 질문 게시판",
+        flavor:"게시판에 질문 쪽지 다섯 장이 붙어 있다. 그중 하나는 이야기 속에서 답을 찾을 수 없다.",
+        ask:"이 글을 읽고 답할 수 없는 질문은?",
+        opts:["Who did Minho go camping with?",
+              "Why did Minho and Dad think about the movement of the sun?",
+              "What did Minho and Dad enjoy all afternoon?",
+              "How many times did Minho’s stone skip on the water?",
+              "What did Minho and Dad watch at night?"],
+        answer:3,
+        hint:"쪽지마다 본문에서 답이 되는 문장을 찾아보렴. 끝까지 찾을 수 없는 하나가 정답이란다.",
+        why:"민호의 돌이 물 위를 몇 번 튀었는지는 나오지 않는다. 나머지는 with Dad, very hot in the afternoon, skipping stones and swimming, hundreds of stars에서 답을 찾을 수 있다." },
+      { type:"short", label:"p.123 마지막 장",
+        text:`At night, we watched hundreds of stars shining in the sky. Nature was full of surprises and science helped me understand them. “Dad, science is {_}.” Dad looked at me with a big smile.`,
+        ask:"민호의 깨달음이 담긴 번진 단어를 영어로 쓰세요.",
+        answer:["everywhere"],
+        hint:"텐트 자리에도, 호수에도, 모닥불에도 과학이 있었지. ‘어디에나’를 영어로 하면?",
+        why:"“Dad, science is everywhere.” 텐트 자리, 물수제비, 장작 쌓기처럼 과학은 생활 곳곳에 있다. 이것이 민호의 깨달음이다." },
+      { type:"mc", label:"pp.120~123 전망대 입구",
+        text:`<span class="booktitle">Science is the Key</span>“You opened the window into nature with the first key.”`,
+        ask:"제목과 아빠의 말을 참고할 때, 이 글의 주제로 가장 알맞은 것은?",
+        opts:["how to set up a tent in the right place",
+              "the fun of skipping stones on a lake",
+              "why stars shine brightly at night",
+              "science as a key to understanding nature",
+              "the best food to cook at a barbecue"],
+        answer:3,
+        hint:"텐트, 물수제비, 모닥불은 모두 예시란다. 세 가지를 하나로 묶는 말을 찾아보렴.",
+        why:"텐트, 물수제비, 모닥불은 모두 과학으로 자연을 이해한 예다. 과학은 자연으로 들어가는 창문을 여는 열쇠라는 것, 그것이 제목 Science is the Key의 뜻이자 이 글의 주제다." },
+      { type:"code", ask:"모은 글자 네 개를 순서대로 눌러 전망대 문을 여세요.",
+        hint:"입구 S, 텐트 자리 T, 호숫가 A, 모닥불 자리 R. 이어 읽으면 오늘 밤 보러 온 것이 된단다." }
+    ]
+  }
+];
+const KEYS = ["A","E","K","N","O","R","S","T","W","Y"];
+
+/* ════════ 장소 그림 ════════ */
+const spark=(x,y,s,f)=>`<path d="M${x} ${y-s}Q${x} ${y} ${x+s} ${y}Q${x} ${y} ${x} ${y+s}Q${x} ${y} ${x-s} ${y}Q${x} ${y} ${x} ${y-s}Z" fill="${f}"/>`;
+const ART = {
+  entrance:`<svg viewBox="0 0 140 100"><defs><clipPath id="sp-ent"><rect width="140" height="100" rx="22"/></clipPath></defs><g clip-path="url(#sp-ent)">
+<rect width="140" height="100" fill="#FFEFD9"/>
+<circle cx="116" cy="24" r="16" fill="#FFE08A" opacity=".65"/><circle cx="116" cy="24" r="10" fill="#FFC83D"/>
+<path d="M0 78C28 68 58 70 88 77C108 82 124 76 140 73L140 100L0 100Z" fill="#BFE3A0"/>
+<path d="M0 91C40 85 90 87 140 89L140 100L0 100Z" fill="#9ED282"/>
+<polygon points="10,92 21,64 32,92" fill="#2F9A6E"/><polygon points="13,79 21,56 29,79" fill="#3AAE7E"/>
+<rect x="66" y="28" width="6" height="64" rx="2" fill="#9B6238"/>
+<polygon points="72,31 110,31 118,38 110,45 72,45" fill="#F7C57F"/>
+<polygon points="66,49 30,49 22,56 30,63 66,63" fill="#EFAE63"/>
+<polygon points="72,67 116,67 124,74 116,81 72,81" fill="#F7C57F"/>
+<g font-family="Jua,'IBM Plex Sans KR',sans-serif" font-size="9.5" fill="#6B3D16" text-anchor="middle"><text x="93" y="41.5">텐트</text><text x="46" y="59.5">호수</text><text x="96" y="77.5">모닥불</text></g>
+<circle cx="69" cy="28" r="4" fill="#8B5427"/></g></svg>`,
+
+  tent:`<svg viewBox="0 0 140 100"><defs><clipPath id="sp-tent"><rect width="140" height="100" rx="22"/></clipPath></defs><g clip-path="url(#sp-tent)">
+<rect width="140" height="100" fill="#DDF1FF"/>
+<path d="M126 70A56 52 0 0 0 14 70" fill="none" stroke="#FFB23F" stroke-width="1.8" stroke-dasharray="1 6" stroke-linecap="round"/>
+<circle cx="70" cy="20" r="15" fill="#FFE08A" opacity=".65"/><circle cx="70" cy="20" r="9.5" fill="#FFC83D"/>
+<g fill="#fff"><ellipse cx="112" cy="36" rx="12" ry="4.5"/><ellipse cx="119" cy="32" rx="7" ry="5"/></g>
+<path d="M0 76C40 70 90 70 140 74L140 100L0 100Z" fill="#CDEBA8"/>
+<path d="M0 90C40 86 90 86 140 88L140 100L0 100Z" fill="#B5DF8F"/>
+<ellipse cx="36" cy="80" rx="19" ry="4" fill="#A9D08F"/>
+<rect x="32" y="46" width="7" height="34" rx="2" fill="#9B6238"/>
+<circle cx="36" cy="40" r="18" fill="#5DBB85"/><circle cx="26" cy="46" r="10" fill="#479E6D"/><circle cx="45" cy="33" r="6.5" fill="#72C996"/>
+<polygon points="60,82 86,45 112,82" fill="#FF8155"/><polygon points="86,45 112,82 86,82" fill="#E86A3F"/>
+<polygon points="86,52 95,82 77,82" fill="#FFE3A1"/>
+<line x1="86" y1="45" x2="86" y2="39" stroke="#8B5427" stroke-width="2.2" stroke-linecap="round"/></g></svg>`,
+
+  lake:`<svg viewBox="0 0 140 100"><defs><clipPath id="sp-lake"><rect width="140" height="100" rx="22"/></clipPath></defs><g clip-path="url(#sp-lake)">
+<rect width="140" height="100" fill="#FFF0D6"/>
+<circle cx="26" cy="24" r="15" fill="#FFD28A" opacity=".65"/><circle cx="26" cy="24" r="9.5" fill="#FFB43D"/>
+<polygon points="0,64 24,42 42,56 70,30 98,58 118,44 140,58 140,70 0,70" fill="#B7E0D2"/>
+<polygon points="70,30 79,39 74,38 70,42 65,38 61,39" fill="#fff" opacity=".85"/>
+<rect y="64" width="140" height="36" fill="#7ACFE3"/>
+<path d="M20 86h16M62 94h26M108 84h18" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>
+<path d="M40 70q10-14 20 0q8-10 16 0q6-7 12 0" fill="none" stroke="#2E86A8" stroke-width="1.8" stroke-dasharray="2 3" stroke-linecap="round"/>
+<g fill="none" stroke="#fff" stroke-width="1.4"><ellipse cx="60" cy="71" rx="5" ry="1.6"/><ellipse cx="76" cy="71" rx="4" ry="1.3"/><ellipse cx="88" cy="71" rx="3" ry="1"/></g>
+<ellipse cx="96" cy="66" rx="5.5" ry="2.2" fill="#7E8E99" transform="rotate(-10 96 66)"/>
+<g stroke="#3AAE7E" stroke-width="2" stroke-linecap="round"><line x1="10" y1="100" x2="12" y2="76"/><line x1="17" y1="100" x2="17" y2="80"/><line x1="23" y1="100" x2="26" y2="84"/></g>
+<g fill="#9B6238"><rect x="10" y="70" width="4.5" height="11" rx="2.2"/><rect x="15" y="74" width="4.5" height="10" rx="2.2"/></g></g></svg>`,
+
+  fire:`<svg viewBox="0 0 140 100"><defs><clipPath id="sp-fire"><rect width="140" height="100" rx="22"/></clipPath><linearGradient id="sp-fireSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5DDF0"/><stop offset="1" stop-color="#FFE3D3"/></linearGradient></defs><g clip-path="url(#sp-fire)">
+<rect width="140" height="100" fill="url(#sp-fireSky)"/>
+${spark(18,20,4,"#FFC83D")}<circle cx="120" cy="18" r="1.6" fill="#FFC83D"/><circle cx="104" cy="30" r="1.2" fill="#FFC83D"/>
+<path d="M0 80C40 74 100 74 140 80L140 100L0 100Z" fill="#C9D99F"/>
+<ellipse cx="70" cy="89" rx="42" ry="7" fill="#C9B083"/>
+<path d="M70 16C82 30 88 40 84 50C82 56 76 60 70 60C63 60 57 56 56 50C54 42 60 34 63 28C65 36 67 39 70 41C70 34 68 25 70 16Z" fill="#FF8A2B"/>
+<path d="M70 30C77 38 80 44 78 50C77 54 74 56 70 56C66 56 63 54 62 50C61 45 64 41 66 37C67 41 68 43 70 44C70 40 69 35 70 30Z" fill="#FFB23F"/>
+<path d="M70 42C74 46 75 49 74 52C73 54 72 55 70 55C68 55 67 54 66 52C65 49 67 46 70 42Z" fill="#FFE27A"/>
+<rect x="44" y="78" width="52" height="9" rx="4.5" fill="#8B5427"/>
+<g fill="#E3B47C" stroke="#B8793F" stroke-width="1.6"><circle cx="54" cy="71.5" r="5.5"/><circle cx="86" cy="71.5" r="5.5"/></g>
+<rect x="44" y="58" width="52" height="9" rx="4.5" fill="#B8793F"/>
+<g fill="#9AA8B2"><ellipse cx="34" cy="89" rx="6" ry="4"/><ellipse cx="106" cy="89" rx="6" ry="4"/><ellipse cx="50" cy="94" rx="6" ry="3.6"/><ellipse cx="90" cy="94" rx="6" ry="3.6"/><ellipse cx="70" cy="96" rx="6" ry="3.4"/></g>
+<g fill="#FFC83D"><circle cx="58" cy="24" r="1.6"/><circle cx="84" cy="18" r="1.3"/><circle cx="90" cy="30" r="1.1"/></g></g></svg>`,
+
+  observatory:`<svg viewBox="0 0 140 100"><defs><clipPath id="sp-obs"><rect width="140" height="100" rx="22"/></clipPath><linearGradient id="sp-obsSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E3A70"/><stop offset="1" stop-color="#4A58A0"/></linearGradient></defs><g clip-path="url(#sp-obs)">
+<rect width="140" height="100" fill="url(#sp-obsSky)"/>
+<path d="M112 13a11 11 0 1 0 9 17a9 9 0 1 1 -9 -17z" fill="#FFE7A0"/>
+${spark(24,22,5,"#FFE7A0")}${spark(56,14,3.5,"#FFE7A0")}${spark(50,44,3,"#FFE7A0")}${spark(84,34,4,"#FFE7A0")}
+<g fill="#fff" opacity=".8"><circle cx="14" cy="46" r="1.1"/><circle cx="70" cy="26" r="1"/><circle cx="100" cy="50" r="1.1"/><circle cx="128" cy="44" r="1"/><circle cx="34" cy="60" r="1"/></g>
+<path d="M0 80C30 72 60 74 90 78C110 81 126 76 140 74L140 100L0 100Z" fill="#1E2856"/>
+<rect x="78" y="64" width="40" height="24" fill="#5D6BB0"/>
+<path d="M78 64a20 20 0 0 1 40 0z" fill="#7A88C9"/>
+<rect x="94" y="46" width="8" height="18" rx="1.5" fill="#FFC83D"/>
+<rect x="92" y="74" width="12" height="14" rx="2.5" fill="#FFD86B"/>
+<g stroke="#D6DCF5" stroke-width="2" stroke-linecap="round"><line x1="40" y1="70" x2="32" y2="88"/><line x1="40" y1="70" x2="48" y2="88"/><line x1="40" y1="70" x2="40" y2="88"/></g>
+<g transform="rotate(-28 40 64)"><rect x="26" y="60" width="28" height="8" rx="3" fill="#D6DCF5"/><rect x="50" y="59" width="5" height="10" rx="1.5" fill="#FFC83D"/></g></g></svg>`
+};
+
+/* ════════ 상태 ════════ */
+const S = { room:0, q:0, lives:3, wrong:[], hints:0, relaxed:false, t:null, left:0, letters:[], start:0, blank:null, artRoom:-1 };
+const TIME = 120;
+const $ = s => document.querySelector(s);
+const el = (t,c,h)=>{const n=document.createElement(t); if(c)n.className=c; if(h!==undefined)n.innerHTML=h; return n;};
+const show = id => document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on", s.id===id));
+const setSky = k => { document.body.dataset.sky = k; };
+const toTop = () => window.scrollTo(0,0);
+const totalQ = ROOMS.reduce((a,r)=>a+r.qs.length,0);
+const gradedQ = ROOMS.reduce((a,r)=>a+r.qs.filter(q=>q.type!=="code").length,0);
+const norm = s => String(s).normalize("NFKC").toLowerCase().replace(/[^a-z0-9]/g,"");
+const shuffle = a => { const b=a.slice(); for(let i=b.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [b[i],b[j]]=[b[j],b[i]]; } return b; };
+const isEn = s => /^[\x20-\x7E’“”…]+$/.test(s);
+const finePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+
+/* ════════ 타이머 ════════ */
+function stopClock(){ if(S.t){ clearInterval(S.t); S.t=null; } }
+function startClock(){
+  stopClock();
+  const c=$("#clock");
+  if(S.relaxed){ c.textContent="여유"; c.className="clock off"; return; }
+  const q=ROOMS[S.room].qs[S.q];
+  S.left = q.time || TIME; paintClock();
+  S.t = setInterval(()=>{ S.left--; paintClock(); if(S.left<=0){ stopClock(); timeUp(); } },1000);
+}
+function paintClock(){
+  const c=$("#clock"), m=Math.floor(S.left/60), s=S.left%60;
+  c.textContent = m+":"+String(s).padStart(2,"0");
+  c.className = "clock" + (S.left<=15 ? " low":"");
+}
+function timeUp(){
+  S.lives--; paintLanterns();
+  if(S.lives<=0) return lose();
+  document.querySelectorAll("#stage button, #stage input").forEach(x=>x.disabled=true);
+  $("#hintBtn").disabled=true;
+  const q=ROOMS[S.room].qs[S.q], lock=q.type==="code";
+  const v=$("#verdict"); v.innerHTML="";
+  v.appendChild(el("div","verdict no","<h3>시간이 다 됐다</h3><p>랜턴이 하나 꺼졌다. "+(lock?"자물쇠를 다시 눌러 보자.":"이 장소의 문제를 처음부터 다시 풀자.")+"</p>"));
+  const b=el("button","btn", lock ? "자물쇠 다시 누르기" : "처음부터 다시 풀기"); b.type="button";
+  b.onclick=()=>{ if(!lock) S.q=0; renderQ(); startClock(); toTop(); };
+  v.appendChild(b); b.focus();
+}
+
+/* ════════ 상태 표시 ════════ */
+function paintLanterns(){
+  const w=$("#lanterns"); w.innerHTML="";
+  for(let i=0;i<3;i++) w.appendChild(el("span","lantern"+(i<S.lives?"":" out")));
+}
+function paintStatus(){
+  const r=ROOMS[S.room];
+  $("#zoneName").textContent=r.name;
+  $("#zoneNum").textContent=(S.room+1)+" / "+ROOMS.length;
+  let done=0; for(let i=0;i<S.room;i++) done+=ROOMS[i].qs.length;
+  done+=S.q;
+  const pct=Math.round(done/(totalQ-1)*100);
+  $("#trail").style.width=pct+"%";
+  $("#sun").style.left=(100-pct)+"%";
+  $("#sun").classList.toggle("moon", S.room===ROOMS.length-1);
+  paintLanterns();
+}
+
+/* ════════ 문제 렌더 ════════ */
+function renderQ(){
+  const r=ROOMS[S.room], q=r.qs[S.q];
+  setSky(r.sky);
+  document.body.style.setProperty("--tape", r.tape);
+  if(S.artRoom!==S.room){ $("#rArt").innerHTML=ART[r.art]||""; S.artRoom=S.room; }
+  paintStatus();
+  $("#rTitle").textContent=r.name;
+  $("#rSub").textContent=r.sub;
+  $("#verdict").innerHTML="";
+  const hb=$("#hintBox"); hb.hidden=true; hb.innerHTML=""; hb.dataset.seen="";
+  const hbtn=$("#hintBtn"); hbtn.disabled=false; hbtn.hidden=!q.hint;
+  const st=$("#stage"); st.innerHTML="";
+  S.blank=null;
+
+  if(q.type!=="code" && (q.label||q.text||q.flavor)){
+    const p=el("div","plaque");
+    if(q.label) p.appendChild(el("div","label",q.label));
+    if(q.flavor) p.appendChild(el("p","flavor",q.flavor));
+    if(q.text){
+      const tx=el("div","en",q.text.replace("{_}",'<span class="blank"></span>'));
+      tx.lang="en"; tx.setAttribute("translate","no");
+      p.appendChild(tx);
+      S.blank=tx.querySelector(".blank");
+    }
+    if(q.box){
+      const bx=el("div","bogi");
+      bx.appendChild(el("strong",null,q.box.title));
+      const ul=el("ul"); q.box.items.forEach(t=>ul.appendChild(el("li",null,t)));
+      bx.appendChild(ul); p.appendChild(bx);
+    }
+    st.appendChild(p);
+  }
+
+  if(q.ask) st.appendChild(el("p","ask",q.ask));
+
+  if(q.type==="mc"){
+    const g=el("div","opts");
+    const opts = q.keep ? q.opts.slice() : shuffle(q.opts);
+    const en = opts.every(isEn);
+    opts.forEach((o,i)=>{
+      const b=el("button","opt"); b.type="button";
+      b.appendChild(el("span","no",String(i+1)));
+      const tx=el("span","tx"); tx.textContent=o; b.appendChild(tx);
+      if(en){ b.lang="en"; b.setAttribute("translate","no"); }
+      b.dataset.v=o;
+      b.onclick=()=>check(o,b);
+      g.appendChild(b);
+    });
+    st.appendChild(g);
+  }
+  else if(q.type==="short"){
+    if(q.frame){
+      const f=el("div","frame",q.frame.replace("{_}",'<span class="blank"></span>'));
+      f.lang="en"; f.setAttribute("translate","no");
+      st.appendChild(f);
+      S.blank=f.querySelector(".blank");
+    }
+    const ph=String(q.answer[0]).replace(/[A-Za-z0-9]/g,"_");
+    const paint=v=>{ if(!S.blank) return; S.blank.textContent = v || ph; S.blank.classList.toggle("filled", !!v); };
+    paint("");
+    const fld=el("div","field");
+    const inp=el("input"); inp.type="text";
+    inp.setAttribute("aria-label", q.num ? "답을 숫자로 입력" : "답을 영어로 입력");
+    inp.placeholder = q.num ? "숫자로 입력" : "영어로 입력";
+    inp.autocomplete="off"; inp.spellcheck=false;
+    inp.setAttribute("autocapitalize","off"); inp.setAttribute("autocorrect","off");
+    inp.setAttribute("enterkeyhint","done");
+    if(q.num) inp.setAttribute("inputmode","numeric");
+    inp.oninput=()=>paint(inp.value.trim());
+    const b=el("button","btn","확인"); b.type="button";
+    const go=()=>{ if(inp.value.trim()) check(inp.value,null); else inp.focus(); };
+    b.onclick=go;
+    inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); go(); } };
+    fld.appendChild(inp); fld.appendChild(b); st.appendChild(fld);
+    if(finePointer) inp.focus({preventScroll:true});
+  }
+  else if(q.type==="code"){
+    const box=el("div","code");
+    for(let i=0;i<4;i++) box.appendChild(el("i","",""));
+    st.appendChild(box);
+    const buf=[];
+    const paintBox=()=>box.querySelectorAll("i").forEach((n,i)=>n.textContent=buf[i]||"");
+    const pad=el("div","pad");
+    KEYS.concat(["지움","확인"]).forEach(k=>{
+      const b=el("button",(k==="지움"||k==="확인")?"fn":null,k); b.type="button";
+      b.onclick=()=>{
+        if(k==="지움") buf.pop();
+        else if(k==="확인"){ if(buf.length===4) check(buf.join(""),null); return; }
+        else if(buf.length<4) buf.push(k);
+        paintBox();
+        if(buf.length===4) check(buf.join(""),null);
+      };
+      pad.appendChild(b);
+    });
+    st.appendChild(pad);
+    S.codeReset=()=>{ buf.length=0; paintBox(); };
+  }
+}
+
+/* ════════ 채점 ════════ */
+function check(val, btn){
+  const r=ROOMS[S.room], q=r.qs[S.q];
+  let ok;
+  if(q.type==="short"){ const v=norm(val); ok=q.answer.some(a=>norm(a)===v); }
+  else if(q.type==="code"){ ok = String(val)===S.letters.join(""); }
+  else { ok = String(val)===q.opts[q.answer]; }
+
+  document.querySelectorAll("#stage button, #stage input").forEach(b=>b.disabled=true);
+  $("#hintBtn").disabled=true;
+  stopClock();
+
+  if(q.type==="code" && !ok) return wrongCode();
+
+  if(btn) btn.classList.add(ok?"right":"wrong");
+  if(!ok && q.type==="mc"){
+    document.querySelectorAll("#stage .opt").forEach(b=>{ if(b.dataset.v===q.opts[q.answer]) b.classList.add("right"); });
+  }
+  if(q.type==="short" && S.blank){
+    if(ok){ S.blank.classList.add("filled","fixed"); }
+    else { S.blank.textContent=q.answer[0]; S.blank.classList.add("fixed"); }
+  }
+  if(ok) afterRight(q); else afterWrong(q);
+}
+
+function nextBtn(){
+  const last = S.q===ROOMS[S.room].qs.length-1;
+  const b=el("button","btn", last ? "글자 확인하기" : "다음 문제"); b.type="button";
+  b.onclick=()=>{ if(last) clearRoom(); else { S.q++; renderQ(); startClock(); toTop(); } };
+  return b;
+}
+
+function afterRight(q){
+  const v=$("#verdict"); v.innerHTML="";
+  if(q.type==="code"){ win(); return; }
+  v.appendChild(el("div","verdict ok","<h3>맞았다</h3><p>"+(q.why||"")+"</p>"));
+  const b=nextBtn(); v.appendChild(b); b.focus({preventScroll:true});
+  v.scrollIntoView({block:"nearest"});
+}
+
+function afterWrong(q){
+  S.lives--; S.wrong.push({room:ROOMS[S.room].name, why:q.why});
+  paintLanterns();
+  const v=$("#verdict"); v.innerHTML="";
+  const keyLine = q.type==="short" ? '<p class="key"><b>정답</b> <span lang="en" translate="no">'+q.answer[0]+'</span></p>' : "";
+  if(S.lives<=0){
+    v.appendChild(el("div","verdict no","<h3>랜턴이 모두 꺼졌다</h3>"+keyLine+"<p>"+(q.why||"")+"</p>"));
+    v.scrollIntoView({block:"nearest"});
+    setTimeout(lose,2200);
+    return;
+  }
+  v.appendChild(el("div","verdict no","<h3>아쉽다. 랜턴 하나가 꺼졌다</h3>"+keyLine+"<p>"+(q.why||"")+"</p>"));
+  const b=nextBtn(); v.appendChild(b); b.focus({preventScroll:true});
+  v.scrollIntoView({block:"nearest"});
+}
+
+function wrongCode(){
+  S.lives--; paintLanterns();
+  const v=$("#verdict"); v.innerHTML="";
+  if(S.lives<=0){
+    v.appendChild(el("div","verdict no","<h3>랜턴이 모두 꺼졌다</h3><p>자물쇠가 열리지 않았다.</p>"));
+    setTimeout(lose,1600);
+    return;
+  }
+  v.appendChild(el("div","verdict no","<h3>자물쇠가 꿈쩍하지 않는다</h3><p>랜턴 하나가 꺼졌다. 장소마다 얻은 글자를 순서대로 다시 눌러 보자.</p>"));
+  S.codeReset();
+  document.querySelectorAll("#stage button").forEach(b=>b.disabled=false);
+  $("#hintBtn").disabled=false;
+  startClock();
+}
+
+/* ════════ 장소 통과 ════════ */
+function clearRoom(){
+  const r=ROOMS[S.room];
+  if(!r.letter){ win(); return; }
+  S.letters.push(r.letter);
+  $("#uZone").textContent=r.name+" 통과. 전망대 글자 하나를 얻었다";
+  $("#uLetter").textContent=r.letter;
+  $("#uWord").textContent=r.word;
+  $("#uWhy").textContent=r.why;
+  const c=$("#uCollected"); c.innerHTML="";
+  for(let i=0;i<4;i++){
+    c.appendChild(el("i", i===S.letters.length-1 ? "new" : "", S.letters[i]||""));
+  }
+  c.setAttribute("aria-label","모은 글자 "+S.letters.join(" "));
+  $("#uNext").textContent = (S.room===ROOMS.length-2) ? "별빛 전망대로" : "다음 장소로";
+  show("unlock"); toTop();
+  document.querySelectorAll(".tent .flap, .tent .letter").forEach(n=>{ n.style.animation="none"; n.offsetHeight; n.style.animation=""; });
+  $("#uNext").focus({preventScroll:true});
+}
+$("#uNext").onclick=()=>{ S.room++; S.q=0; show("game"); renderQ(); startClock(); toTop(); };
+
+/* ════════ 종료 ════════ */
+function lose(){
+  stopClock();
+  setSky("none");
+  const box=$("#failRecap");
+  const seen=new Set(); const items=[];
+  S.wrong.slice().reverse().forEach(w=>{ if(!seen.has(w.why)&&items.length<3){ seen.add(w.why); items.push(w); } });
+  box.innerHTML="<h3>놓친 문제</h3><ul>"+(items.length
+    ? items.map(w=>"<li><b>"+w.room+"</b> "+w.why+"</li>").join("")
+    : "<li>시간이 부족했다. 여유 모드로 한 번 풀어 보자.</li>")+"</ul>";
+  show("fail"); toTop();
+}
+
+function win(){
+  stopClock();
+  setSky("night"); document.body.classList.add("cleared");
+  const secs=Math.round((Date.now()-S.start)/1000);
+  const m=Math.floor(secs/60), s=secs%60;
+  $("#tally").innerHTML=
+    "<div><b>"+(gradedQ-S.wrong.length)+"/"+gradedQ+"</b><span>맞힌 문제</span></div>"+
+    "<div><b>"+S.lives+"</b><span>남은 랜턴</span></div>"+
+    "<div><b>"+m+":"+String(s).padStart(2,"0")+"</b><span>걸린 시간</span></div>"+
+    "<div><b>"+S.hints+"</b><span>들은 힌트</span></div>";
+  show("clear"); toTop();
+  const art=$("#skyArt"); art.classList.remove("playing"); art.getBoundingClientRect(); art.classList.add("playing");
+}
+
+/* ════════ 힌트 ════════ */
+$("#hintBtn").onclick=()=>{
+  const q=ROOMS[S.room].qs[S.q];
+  const h=$("#hintBox");
+  if(h.hidden){ h.innerHTML="<b>아빠</b> "+q.hint; h.hidden=false; if(!h.dataset.seen){ S.hints++; h.dataset.seen="1"; } }
+  else h.hidden=true;
+};
+
+/* ════════ 밤하늘 반짝이 ════════ */
+function makeSparkles(){
+  const box=$("#nightSky"); box.innerHTML="";
+  const add=(n,more)=>{ for(let i=0;i<n;i++){
+    const s=el("span","spark"+(more?" more":"")+(Math.random()<.5?" twinkle":""));
+    const size=(6+Math.random()*8).toFixed(1)+"px";
+    s.style.width=size; s.style.height=size;
+    const x=Math.random()*14;                       /* 글자 칸을 피해 양옆 가장자리에만 */
+    s.style.left=(Math.random()<.5 ? x : 86+x).toFixed(2)+"%";
+    s.style.top=(Math.random()*(more?64:40)).toFixed(2)+"%";
+    s.style.background=Math.random()<.6?"#F2B233":"#8C95D8";
+    s.style.animationDelay=(Math.random()*3.6).toFixed(2)+"s";
+    box.appendChild(s);
+  } };
+  add(16,false); add(24,true);
+}
+
+/* ════════ 시작 · 재시작 ════════ */
+function reset(){
+  document.body.classList.remove("cleared");
+  S.room=0; S.q=0; S.lives=3; S.wrong=[]; S.hints=0; S.letters=[]; S.start=Date.now(); S.artRoom=-1;
+  show("game"); renderQ(); startClock(); toTop();
+}
+$("#start").onclick=()=>{ S.relaxed=$("#relaxed").checked; reset(); };
+$("#retry").onclick=reset;
+$("#again").onclick=()=>{ document.body.classList.remove("cleared"); document.body.style.removeProperty("--tape"); setSky("dawn"); show("title"); toTop(); };
+
+makeSparkles();
+paintLanterns();
+})();
+</script>
+</body>
+</html>
